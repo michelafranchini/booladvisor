@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\RestaurantController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,4 +29,6 @@ Route::middleware('auth')
     ->group(function () {
         
         Route::get('/', 'HomeController@index')->name('home'); 
+        //Route::get('/restaurants', 'RestaurantController@index'); 
+        Route::resource('restaurants', 'RestaurantController');
     });

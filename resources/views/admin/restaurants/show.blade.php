@@ -18,5 +18,17 @@
             <h3>Email</h3>
             <h5>{{$restaurant->email}}</h5>
         </div>
+
+        <div>
+            <a type="button" class="btn btn-dark" href="{{route('admin.restaurants.index')}}">Torna all'elenco</a>
+
+            <a type="button" class="btn btn-warning" href="{{route('admin.restaurants.edit', $restaurant->id)}}">Modifica</a>
+
+            <form action="{{route('admin.restaurants.destroy', $restaurant->id)}}" method="POST" onsubmit="return confirm('Sei sicuro di voler cancellare il ristorante?')">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Cancella</button>
+            </form>
+        </div>
     </div>
 @endsection

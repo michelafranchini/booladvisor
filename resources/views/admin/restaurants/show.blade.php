@@ -30,5 +30,6 @@
                 <button type="submit" class="btn btn-danger">Cancella</button>
             </form>
         </div>
+
     </div>
 @endsection

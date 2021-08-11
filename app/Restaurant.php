@@ -16,4 +16,8 @@ class Restaurant extends Model
         'image',
         'description'
     ]; 
+
+    public function plates() {
+        return $this->hasMany('App\Plate'); 
+    }
 }

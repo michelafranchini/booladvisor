@@ -2,8 +2,9 @@
 
 @section('content')
     <div class="container">
-        <h1>ELENCO RISTORANTI</h1>
-        <a class="btn btn-primary" href="{{route('admin.restaurants.create')}}">Aggiungi Ristorante</a>
+        <h1>ELENCO PIATTI</h1>
+        {{-- @dd($restaurant) --}}
+        <a class="btn btn-primary" href="{{route('admin.plates.create', $restaurant)}}">Aggiungi Un piatto</a>
         <div>
             <table class="table table-striped">
                 <thead>
@@ -14,25 +15,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($restaurants as $item)
+                    @foreach ($plates as $item)
                         <tr>
                             <td>{{$item->id}}</td>
                             <td>{{$item->name}}</td>
                             <td>
-                                <a type="button" class="btn btn-success" href="{{route('admin.restaurants.show', $item->id)}}">Mostra</a>
+                                <a type="button" class="btn btn-success" href="{{route('admin.plates.show', $item)}}">Mostra</a>
                             </td>
                             <td>
-                                <a type="button" class="btn btn-warning" href="{{route('admin.restaurants.edit', $item->id)}}">Modifica</a>
+                                <a type="button" class="btn btn-warning" href="{{route('admin.plates.edit', $item)}}">Modifica</a>
                             </td>
                             <td>
-                                <form action="{{route('admin.restaurants.destroy', $item->id)}}" method="POST" onsubmit="return confirm('Sei sicuro di voler cancellare il ristorante?')">
+                                <form action="{{route('admin.plates.destroy', $item)}}" method="POST" onsubmit="return confirm('Sei sicuro di voler cancellare il piatto?')">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger" >Cancella</button>
                                 </form>
-                            </td>
-                            <td>
-                                <a type="button" class="btn btn-outline-primary" href="{{route('admin.showMenu', $item)}}">Menù</a>
                             </td>
                         </tr>
                     @endforeach

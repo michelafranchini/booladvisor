@@ -31,4 +31,7 @@ Route::middleware('auth')
         Route::get('/', 'HomeController@index')->name('home'); 
         //Route::get('/restaurants', 'RestaurantController@index'); 
         Route::resource('restaurants', 'RestaurantController');
+        Route::resource('plates', 'PlateController')->except(['create']);
+        Route::get('/restaurants/{id}/plates/create', 'PlateController@create')->name('plates.create'); 
+        Route::get('restaurants/{id}/plates', 'RestaurantController@showMenu')->name('showMenu'); 
     });

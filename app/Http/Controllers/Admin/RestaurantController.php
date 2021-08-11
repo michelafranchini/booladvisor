@@ -121,4 +121,20 @@ class RestaurantController extends Controller
         $restaurant->delete(); 
         return redirect()->route('admin.restaurants.index'); 
     }
+
+
+    
+
+    public function showMenu($restaurant) {
+
+        $newRestaurant = Restaurant::where('id', $restaurant)->firstOrFail(); 
+
+        $plates = $newRestaurant->plates; 
+
+        return view('admin.plates.index', compact('plates', 'restaurant')); 
+        //dd($newRestaurant->plates); 
+
+    }
 }
+
+            

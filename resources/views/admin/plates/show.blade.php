@@ -20,6 +20,11 @@
         </div>
 
         <div>
+            <h3>Categoria</h3>
+            <h5>{{$plate->category->name}}</h5>
+        </div>
+
+        <div>
             <a type="button" class="btn btn-dark" href="{{route('admin.showMenu', $plate->restaurant)}}">Torna all'elenco dei piatti</a>
 
             {{-- <a type="button" class="btn btn-warning" href="{{route('admin.restaurants.edit', $restaurant->id)}}">Modifica</a>

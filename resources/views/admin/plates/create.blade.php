@@ -44,6 +44,17 @@
                 @enderror
             </div>
             <div class="form-group">
+                <label for="category_id">Categoria</label>
+                <select class="form-control" name="category_id" id="category_id">
+                    <option selected>Scegli una categoria</option>
+                    @foreach ($categories as $category)
+                        <option value="{{$category->id}}">
+                            {{$category->name}}
+                        </option>  
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="restaurant_id">ID Ristorante</label>
                 <input type="hidden" class="form-control-file" id="restaurant_id" name="restaurant_id" value="{{$id}}">
                 @error('restaurant_id')

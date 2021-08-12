@@ -6,7 +6,7 @@
         {{-- @dd($restaurant) --}}
         <a class="btn btn-primary" href="{{route('admin.plates.create', $restaurant)}}">Aggiungi Un piatto</a>
         <div>
-            <table class="table table-striped">
+            <table class="table table-striped my-5">
                 <thead>
                     <tr>
                         <th>ID</th>

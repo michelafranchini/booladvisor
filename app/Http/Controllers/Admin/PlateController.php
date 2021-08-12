@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Plate;
 use Illuminate\Http\Request;
@@ -14,7 +15,8 @@ class PlateController extends Controller
         'name' => 'required|max:100', 
         'price' => 'required', 
         'ingredients' => 'required', 
-        'image' => 'required|image'
+        'image' => 'required|image', 
+        'category_id' => 'exists:categories,id'
     ]; 
     /**
      * Display a listing of the resource.
@@ -35,7 +37,9 @@ class PlateController extends Controller
      */
     public function create($id)
     { 
-        return view('admin.plates.create', compact('id')); 
+        $categories = Category::all(); 
+
+        return view('admin.plates.create', compact('id','categories')); 
     }
 
     /**
@@ -85,7 +89,9 @@ class PlateController extends Controller
      */
     public function edit(Plate $plate)
     {
-        return view('admin.plates.edit', compact('plate')); 
+        $categories = Category::all(); 
+
+        return view('admin.plates.edit', compact('plate', 'categories')); 
     }
 
     /**

@@ -35,3 +35,7 @@ Route::middleware('auth')
         Route::get('/restaurants/{id}/plates/create', 'PlateController@create')->name('plates.create'); 
         Route::get('restaurants/{id}/plates', 'RestaurantController@showMenu')->name('showMenu'); 
     });
+
+Route::get('{any?}', function () {
+    return view ('guest.home'); 
+})->where('any','.*')->name('home');

@@ -12,10 +12,15 @@ class Plate extends Model
         'ingredients', 
         'description', 
         'image', 
-        'restaurant_id'
+        'restaurant_id', 
+        'category_id'
     ]; 
 
     public function restaurant() {
         return $this->belongsTo('App\Restaurant'); 
+    }
+
+    public function category() {
+        return $this->belongsTo('App\Category'); 
     }
 }

@@ -36,6 +36,7 @@ export default {
 
 <style lang='scss' scoped>
     nav {
+        height: 80px;
         background-color: #f36d00;
 
         img {

@@ -2053,6 +2053,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Home'
 });
@@ -2120,7 +2142,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "nav[data-v-1f42fb90] {\n  background-color: #f36d00;\n}\nnav img[data-v-1f42fb90] {\n  width: 200px;\n}\nnav a.nav-link[data-v-1f42fb90] {\n  margin-right: 30px;\n  text-transform: uppercase;\n  font-size: 20px;\n  color: white;\n}\nnav a.nav-link[data-v-1f42fb90]:hover {\n  background-color: white;\n  color: #f36d00;\n}", ""]);
+exports.push([module.i, "nav[data-v-1f42fb90] {\n  height: 80px;\n  background-color: #f36d00;\n}\nnav img[data-v-1f42fb90] {\n  width: 200px;\n}\nnav a.nav-link[data-v-1f42fb90] {\n  margin-right: 30px;\n  text-transform: uppercase;\n  font-size: 20px;\n  color: white;\n}\nnav a.nav-link[data-v-1f42fb90]:hover {\n  background-color: white;\n  color: #f36d00;\n}", ""]);
 
 // exports
 
@@ -2158,7 +2180,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "*[data-v-b3c5cf30] {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n.jumbotron[data-v-b3c5cf30] {\n  height: 600px;\n  background-image: url(\"https://www.projectinvictus.it/wp-content/uploads/2019/12/Cibi-che-fanno-ingrassare.001.jpeg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  position: relative;\n}\n.jumbotron h1[data-v-b3c5cf30] {\n  font-size: 80px;\n  color: white;\n}\n.jumbotron .container[data-v-b3c5cf30] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.jumbotron .container img[data-v-b3c5cf30] {\n  width: 100px;\n}", ""]);
+exports.push([module.i, ".jumbotron[data-v-b3c5cf30] {\n  height: calc(100vh - 80px);\n  background-image: url(\"https://www.projectinvictus.it/wp-content/uploads/2019/12/Cibi-che-fanno-ingrassare.001.jpeg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  position: relative;\n}\n.jumbotron h1[data-v-b3c5cf30] {\n  font-size: 80px;\n  color: white;\n}\n.jumbotron .text_jb[data-v-b3c5cf30] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.jumbotron .text_jb #start[data-v-b3c5cf30] {\n  overflow-y: scroll;\n  scroll-behavior: smooth;\n}\n.container[data-v-b3c5cf30] {\n  margin: auto;\n}\n.container h3[data-v-b3c5cf30] {\n  font-size: 60px;\n}\n.container .choose_restaurant[data-v-b3c5cf30],\n.container .choose_menu[data-v-b3c5cf30],\n.container .lets_eat[data-v-b3c5cf30] {\n  margin: 20px 0;\n  padding: 30px;\n  border: 2px solid #f36d00;\n}\n.container .choose_restaurant .menu_image[data-v-b3c5cf30],\n.container .choose_restaurant .eat_image[data-v-b3c5cf30],\n.container .choose_menu .menu_image[data-v-b3c5cf30],\n.container .choose_menu .eat_image[data-v-b3c5cf30],\n.container .lets_eat .menu_image[data-v-b3c5cf30],\n.container .lets_eat .eat_image[data-v-b3c5cf30] {\n  width: 600px;\n}\n.container .btn-warning[data-v-b3c5cf30] {\n  font-size: 30px;\n  background-color: #f36d00;\n  color: white;\n}", ""]);
 
 // exports
 
@@ -3680,30 +3702,135 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "container text-center", attrs: { id: "start" } },
+      [
+        _c("h2", [_vm._v("Come fare? Semplice!")]),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _vm._m(3),
+        _vm._v(" "),
+        _c(
+          "div",
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "btn btn-warning",
+                attrs: { to: { name: "restaurants" } }
+              },
+              [_vm._v("Inizia subito!")]
+            )
+          ],
+          1
+        )
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "jumbotron" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("h1", [
-            _vm._v("Tutti i piatti che vuoi "),
-            _c("br"),
-            _vm._v(" a portata di click")
-          ]),
-          _vm._v(" "),
-          _c("img", { attrs: { src: "/img/platesvg.svg", alt: "" } })
+    return _c("div", { staticClass: "jumbotron" }, [
+      _c("div", { staticClass: "text_jb" }, [
+        _c("h1", { staticClass: "animate__animated animate__backInDown" }, [
+          _vm._v("Tutti i piatti che vuoi "),
+          _c("br"),
+          _vm._v(" a portata di click")
+        ]),
+        _vm._v(" "),
+        _c("a", { staticClass: "btn btn-warning", attrs: { href: "#start" } }, [
+          _vm._v("Inizia Subito")
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "container text-center" }, [
-        _c("h2", [_vm._v("Scegli il ristorante")])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "choose_restaurant animate__animated animate__backInLeft animate__delay-3s"
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "d-flex align-items-center justify-content-between" },
+          [
+            _c("h3", [_vm._v("Scegli il tuo ristorante preferito")]),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "restaurant_image",
+              attrs: { src: "/img/chooserestaurant.svg", alt: "" }
+            })
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "choose_menu animate__animated animate__backInRight animate__delay-4s"
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "d-flex align-items-center justify-content-between" },
+          [
+            _c("img", {
+              staticClass: "menu_image",
+              attrs: { src: "/img/choosemenu.svg", alt: "" }
+            }),
+            _vm._v(" "),
+            _c("h3", [_vm._v("Scegli i piatti")])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "lets_eat animate__animated animate__backInLeft animate__delay-5s"
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "d-flex align-items-center justify-content-between" },
+          [
+            _c("h3", [_vm._v("Gustali dove vuoi")]),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "eat_image",
+              attrs: { src: "/img/eat.svg", alt: "" }
+            })
+          ]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true

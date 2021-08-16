@@ -1,16 +1,16 @@
 <template>
     <div class="container">
         <div class="card w-100">
-            <div class="card-body d-flex">
+            <div class="card-body d-flex justify-content-around">
                 <div class="image_container">
                     <img :src="'/storage/'+ restaurant.image" :alt="restaurant.name">
                 </div>
                 <div class="text_container">
                     <h4 class="card-title">{{ restaurant.name }}</h4>
-                    <h5>{{'+' + restaurant.phone}}</h5>
+                    <h5>+{{restaurant.phone}}</h5>
                         <div class="button_container">
-                            <button type="button" class="btn btn-warning">Vai alla scheda del ristorante</button>
-                            <button type="button" class="btn btn-info">Vai al menù</button>
+                            <router-link type="button" class="btn btn-warning" :to="{name: 'restaurant', params: {slug: restaurant.slug}}">Vai alla scheda del ristorante</router-link>
+                            <router-link type="button" class="btn btn-info" :to="{name: 'plates', params: {id: restaurant.id}}">Vai al menù</router-link>
                         </div>
                 </div>
             </div>

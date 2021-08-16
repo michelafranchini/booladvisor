@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\RestaurantController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::namespace('Api')
     ->group(function() {
         Route::get('restaurants', 'RestaurantController@index'); 
+        Route::get('restaurants/{slug}', 'RestaurantController@show');
+        Route::get('restaurants/{restaurant}/plates', 'RestaurantController@showMenu'); 
+ 
     }); 

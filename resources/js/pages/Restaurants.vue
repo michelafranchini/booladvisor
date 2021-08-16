@@ -1,6 +1,6 @@
 <template>
     <div class="container text-center">
-        <h1>Ecco i nostri ristoranti</h1>
+        <h1 class="my-5">Ecco i nostri ristoranti</h1>
         <SingleRestaurant 
         :restaurant= "restaurant"
         v-for="restaurant in restaurants"
@@ -30,7 +30,7 @@ export default {
             .get('http://127.0.0.1:8000/api/restaurants')
             .then(
                 result => {
-                    console.log(result.data)
+                    //console.log(result.data)
                     this.restaurants = result.data; 
                 }
             )

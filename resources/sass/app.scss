@@ -6,3 +6,6 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// $aos-distance: 500px; // It has to be above import
+@import 'node_modules/aos/src/sass/aos.scss';

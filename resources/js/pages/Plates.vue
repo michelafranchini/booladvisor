@@ -1,24 +1,36 @@
 <template>
-    <div class="text-center">
-        <h1 class="my-5">I nostri piatti</h1>
-        <Plate 
-        v-for="plate in plates"
-        :key= plate.id 
-        :plate = "plate"/>
+    <div class="container d-flex text-center">
+        <div>
+            <h1 class="my-5">I nostri piatti</h1>
+            <Plate 
+            v-for="plate in plates"
+            :key= plate.id 
+            :plate="plate"
+            @addPlateCart="getPlateCart"/>
+        </div>
+        <aside>
+            <Cart 
+            :plate="plate"
+            :plateCounter="plateCounter"/>
+        </aside>
     </div>
 </template>
 
 <script>
 import Plate from '../components/Plate.vue'; 
+import Cart from '../components/Cart.vue'; 
 
 export default {
     name: "Plates", 
     components: {
-        Plate
+        Plate, 
+        Cart
     },
     data() {
         return {
-            plates: []
+            plates: [], 
+            plate: {}, 
+            plateCounter: null
         }
     }, 
 
@@ -33,11 +45,18 @@ export default {
 
                 }
             )
+        }, 
+
+        getPlateCart({plate, plateCounter}) {
+            this.plate = plate; 
+            this.plateCounter = plateCounter; 
         }
+
     }, 
     created() {
         this.getPlates(this.$route.params.id); 
-    }
+    }, 
+
 }
 </script>
 
